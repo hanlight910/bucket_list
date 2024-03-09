@@ -26,53 +26,8 @@
     </div>
   </div>
   <div class="flex-row">
-    <div class="bucket img1 center">
-      나만의 웹 만들기
-    </div>
-    <div class="bucket img2 center">
-      바디프로필 찍기
-    </div>
-    <div class="bucket img3 center">
-      인테리어 꾸미기
-    </div>
-    <div class="bucket img4 center">
-      식물 키우기
-    </div>
-    <div class="bucket img5 center">
-      10킬로그램 감량!
-    </div>
-    <div class="bucket img6 center">
-      내가 만든 웹사이트 자랑하기
-    </div>
   </div>
   <script>
-    // 페이지 로드 시 이전 상태 복원
-    document.addEventListener("DOMContentLoaded", (event) => {
-      const buckets = document.querySelectorAll(".bucket");
-      buckets.forEach((bucket, index) => {
-        // 로컬 스토리지에서 상태 읽기
-        const isDone = localStorage.getItem("bucket" + index) === "done";
-        if (isDone) {
-          bucket.classList.add("done");
-        }
-      });
-    });
-
-    // 버킷 리스트 클릭 이벤트
-    const buckets = document.querySelectorAll(".bucket");
-    buckets.forEach((bucket, index) => {
-      bucket.addEventListener("click", function () {
-        // 클래스 토글
-        bucket.classList.toggle("done");
-
-        // 로컬 스토리지에 상태 저장
-        if (bucket.classList.contains("done")) {
-          localStorage.setItem("bucket" + index, "done");
-        } else {
-          localStorage.setItem("bucket" + index, "");
-        }
-      });
-    });
 
   </script>
   <script src="./js/bucket.js";></script>

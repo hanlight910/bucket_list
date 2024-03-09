@@ -77,19 +77,22 @@ document.addEventListener('DOMContentLoaded', function async () {
             bucket.classList.add("done");
         }
     });
+
+    buckets.forEach((bucket, index) => {
+        bucket.addEventListener("click", function () {
+            console.log("dj");
+            // 클래스 토글
+            bucket.classList.toggle("done");
+    
+            // 로컬 스토리지에 상태 저장
+            if (bucket.classList.contains("done")) {
+                localStorage.setItem("bucket" + index, "done");
+            } else {
+                localStorage.setItem("bucket" + index, "");
+            }
+        });
+    }
+    );
 });
 
-buckets.forEach((bucket, index) => {
-    bucket.addEventListener("click", function () {
-        // 클래스 토글
-        bucket.classList.toggle("done");
 
-        // 로컬 스토리지에 상태 저장
-        if (bucket.classList.contains("done")) {
-            localStorage.setItem("bucket" + index, "done");
-        } else {
-            localStorage.setItem("bucket" + index, "");
-        }
-    });
-}
-);

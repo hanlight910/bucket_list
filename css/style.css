@@ -45,7 +45,7 @@ html {
   content: "";
   width: 107px;
   height: 70px;
-  background-image: url("./resources/Done.png");
+  background-image: url("../resources/Done.png");
   background-size: cover;
   background-position: center;
   position: absolute;
